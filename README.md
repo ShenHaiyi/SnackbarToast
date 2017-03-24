@@ -10,7 +10,7 @@ SnackbarToast.make(context, "SUCCESS", 2000l)
         .setPromptThemBackground(Prompt.SUCCESS)
         .show();
 //自定义
-SnackbarToast s = SnackbarToast.make(this, "自定义内容", 2000l)
+SnackbarToast.make(this, "自定义内容", 2000l)
         .addIcon(R.mipmap.ic_launcher_round)//添加一个图片
         .setBackgroundColor(R.color.colorAccent);//设置一个背景色
         .setButton("确定", new SnackbarToast.OnClick() {
@@ -19,7 +19,7 @@ SnackbarToast s = SnackbarToast.make(this, "自定义内容", 2000l)
                 toast.cancel();
             }
         })
-        s.show();
+        .show();
 //显示警告提示
 SnackbarToast.make(context, "WARNING", 2000l)
         .setPromptThemBackground(Prompt.WARNING)
@@ -32,13 +32,3 @@ mParams(myToast.getWindowParams());
 myToast.show();
 ```
 ![](https://github.com/ShenHaiyi/SnackbarToast/blob/master/screenshot.png)
-            
-| 1D product | 1D industrial | 2D
-| ---------- | ------------- | --------------
-| UPC-A      | Code 39       | QR Code
-| UPC-E      | Code 93       | Data Matrix
-| EAN-8      | Code 128      | Aztec (beta)
-| EAN-13     | Codabar       | PDF 417 (beta)
-|            | ITF           |
-|            | RSS-14        |
-|            | RSS-Expanded  |

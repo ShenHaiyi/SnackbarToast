@@ -100,4 +100,22 @@ public class SnackbarToast extends MyToast {
         mView.getMessageView().setText(text);
         return this;
     }
+    
+    public SnackbarToast setButton(CharSequence text, final OnClick click) {
+        Button button = mView.getActionView();
+        button.setVisibility(View.VISIBLE);
+        if (text != null) button.setText(text);
+        if (click != null)
+            button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                click.onClick(v, SnackbarToast.this);
+            }
+        });
+        return this;
+    }
+
+    public interface OnClick {
+        public void onClick(View v, MyToast toast);
+    }
 }

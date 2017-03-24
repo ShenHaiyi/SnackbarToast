@@ -30,5 +30,5 @@
         android:visibility="gone"
         android:textAppearance="@style/TextAppearance.Design.Snackbar.Message"
         style="?attr/borderlessButtonStyle"
-        android:textColor="?attr/colorPrimaryDark"/>
+        android:textColor="#ffffff"/>
 </merge>

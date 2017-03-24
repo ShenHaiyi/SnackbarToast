@@ -51,10 +51,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 myToast.show();
                 break;
             case R.id.button5:
-                SnackbarToast s = SnackbarToast.make(this, "WARNING", 3000l)
-                        .addIcon(R.mipmap.ic_launcher_round);
-                s.show();
-                s.setText("消息提醒...");
+                SnackbarToast.make(this, "消息提醒...", 2000l)
+                        .addIcon(R.mipmap.ic_launcher_round)
+                        .setBackgroundColor(R.color.colorAccent)
+                        .setButton("确定", new SnackbarToast.OnClick() {
+                            @Override
+                            public void onClick(View v, MyToast toast) {
+                                toast.cancel();
+                            }
+                        })
+                        .show();
                 break;
         }
     }
